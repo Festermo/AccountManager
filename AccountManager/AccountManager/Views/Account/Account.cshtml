@@ -1,0 +1,40 @@
+﻿@{
+    Layout = "_Layout";
+}
+
+@model AccountModel
+
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}
+
+<head>
+    @User.Identity!.Name account
+</head>
+<body>
+    <form asp-controller="Home" style="margin-top:20px">
+        <div class="form-group">
+            <label for="Name">Name:</label>
+            <input type="text" asp-for="Name" class="form-control" Value="@Model.Name" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label for="Surname">Surname:</label>
+            <input type="text" asp-for="Surname" class="form-control" Value="@Model.Surname" />
+            <span asp-validation-for="Surname" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label for="Phone">Phone:</label>
+            <input type="text" asp-for="Phone" class="form-control" Value="@Model.Phone" />
+            <span asp-validation-for="Phone" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label for="Email">Email:</label>
+            <input type="text" asp-for="Email" class="form-control" Value="@Model.Email" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <button type="submit" class="btn btn-primary" asp-controller="Account" asp-action="ChangeAccountInformation" style="margin-top:20px">Change</button>
+        </div>
+    </form>
+</body>

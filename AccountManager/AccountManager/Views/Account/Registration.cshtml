@@ -1,0 +1,52 @@
+﻿@{
+    Layout = "_Layout";
+}
+
+@model RegistrationModel
+
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}
+
+<body>
+    <form asp-controller="Home">
+        <div class="form-group">
+            <label for="Login">Login:</label>
+            <input type="text" asp-for="Login" class="form-control" />
+            <span asp-validation-for="Login" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label for="Password">Password:</label>
+            <input type="text" asp-for="Password" class="form-control" />
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label for="ConfirmPassword">Confirm password:</label>
+            <input type="text" asp-for="ConfirmPassword" class="form-control" />
+            <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label for="Name">Name:</label>
+            <input type="text" asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label for="Surname">Surname:</label>
+            <input type="text" asp-for="Surname" class="form-control" />
+            <span asp-validation-for="Surname" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label for="Phone">Phone:</label>
+            <input type="text" asp-for="Phone" class="form-control" />
+            <span asp-validation-for="Phone" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label for="Email">Email:</label>
+            <input type="text" asp-for="Email" class="form-control" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <button type="submit" class="btn btn-primary" asp-controller="Account" asp-action="Register" method="Post" style="margin-top:20px">Register</button>
+        </div>
+    </form>
+</body>
